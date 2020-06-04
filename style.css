@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  min-height: 100vh;
+}
+
+.home-main-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container {
+  max-height: 100vh;
+}
+
+.full-height-grow {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  /* So logo and menu items come next to each other */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 15vh;
+  color: rgb(231, 219, 219);
+  font-family: "Poppins", sans-serif;
+  /* side nav bar opens over other elements */
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  display: flex;
+  color: #6d5565;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-family: "Rock Salt", cursive;
+  align-items: center;
+  /* use padding if logo.png is used */
+  /* padding: 10px; */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  color: #6d5565;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #0f0c0e;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #6d5565;
+  margin: 5px;
+  /* burger transition to X */
+  transition: all 0.7s ease;
+}
+
+/* mobile */
+
+/* do as a check always */
+/* @media screen and (max-width: 768px) {
+  body {
+    display: none;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  body {
+    /* hide the container that is off the screen (see below) */
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    /* 85 h, 15 top - navbar starts 15 below and is full screen*/
+    height: 100vh;
+    top: 0vh;
+    background-color: #fff4ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    /* moves the container off the screen */
+    transform: translateX(100%);
+    /* have a nice transition - not just boom and there */
+    transition: transform 0.5s ease-in;
+  }
+  /* fade in nicely! */
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+/* tablet */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+/* side nav bar animation */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
