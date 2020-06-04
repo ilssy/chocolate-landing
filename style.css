@@ -52,7 +52,7 @@ nav {
   font-family: "Rock Salt", cursive;
   align-items: center;
   /* use padding if logo.png is used */
-  /* padding: 10px; */
+  padding: 10px;
 }
 
 .nav-links {
