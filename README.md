@@ -1,5 +1,7 @@
 # Chocolate Landing Page
 
+A responsive landing page for a chocolate shop.
+
 Developed after [my design on Figma](https://www.figma.com/file/IFYJ0MPlV8xWnmt5kpCT1W/chocolate-site).
 
 Deployed to [Netlify](https://ik-chocolate.netlify.app/).
